@@ -55,7 +55,7 @@ export default function Timeline() {
           className="mb-14 text-center"
         >
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600">
-            Journey
+            Experiences
           </p>
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
             Pendidikan &amp; Pengalaman

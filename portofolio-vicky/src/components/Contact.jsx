@@ -36,7 +36,7 @@ export default function Contact() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-slate-600">
             Punya proyek atau ingin sekadar berdiskusi soal desain dan
-            teknologi? Silakan hubungi saya melalui sosial media saya dibawah ini.
+            teknologi? Silakan hubungi saya melalui dibawah ini.
           </p>
         </motion.div>
 

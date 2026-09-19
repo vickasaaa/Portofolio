@@ -15,8 +15,8 @@ export const profile = {
   role: "UI/UX Designer | Front-End Developer",
   headline: "Hi, I'm Muhammad Vicky",
   subHeadline:
-    "Mahasiswa Teknik Informatika — UI/UX Designer & Front-End Developer",
-  photo: "/profile.jpg",
+    "UI/UX Designer & Front-End Developer",
+  photo: "/projects/profile.jpg",
   cv: "/cv-muhammad-vicky.pdf",
   whatsapp: "https://wa.me/6285813288426",
   email: "mhmdvicky09@email.com",
@@ -41,8 +41,7 @@ export const aboutMe = {
     },
   ],
   stats: [
-    { label: "Proyek Selesai", value: "10+" },
-    { label: "Sertifikat", value: "5+" },
+    { label: "Proyek Selesai", value: "3+" },
     { label: "Tahun Belajar", value: "3+" },
   ],
 };
@@ -52,12 +51,11 @@ export const skillsData = [
     id: "design",
     title: "Design Tools & Methods",
     description:
-      "Perangkat dan metodologi yang digunakan dalam proses riset hingga desain antarmuka.",
+      "Design Toold dan metode yang digunakan dalam proses riset hingga desain interface.",
     skills: [
       { name: "Figma", icon: "figma", color: "#F24E1E" },
-      { name: "Sketch", icon: "sketch", color: "#F7B500" },
-      { name: "Miro", icon: "miro", color: "#050038" },
-      { name: "Maze", icon: "maze", color: "#FF4F26" },
+      { name: "StarUML", localIcon: "/icons/staruml.jpg", color: "#E25A1C" },
+      { name: "Canva", localIcon: "/icons/canva.jpg", color: "#00C4CC" },
     ],
   },
   {
@@ -69,7 +67,7 @@ export const skillsData = [
       { name: "Next.js", icon: "nextdotjs", color: "#000000" },
       { name: "React.js", icon: "react", color: "#61DAFB" },
       { name: "JavaScript", icon: "javascript", color: "#F7DF1E" },
-      { name: "HTML5", icon: "html5", color: "#E34F26" },
+      { name: "HTML", icon: "html5", color: "#E34F26" },
       { name: "CSS", icon: "css", color: "#663399" },
       { name: "Tailwind CSS", icon: "tailwindcss", color: "#06B6D4" },
       { name: "Git", icon: "git", color: "#F05032" },
@@ -83,28 +81,27 @@ export const projectsData = [
     title: "Airify",
     description:
       "Airify adalah Aplikasi Berbasis Website, Untuk Memonitoring Kualitas Udara pada seluruh Kampus di Karawang.",
-    image: "/projects/ecommerce.png",
+    image: "/projects/Airify.jpg",
     tech: ["Php Native", "Boostrap CSS", "JavaScript"],
     githubUrl: "https://github.com/vickasaaa/Airify",
   },
   {
     id: 2,
-    title: "Sales Prediction System",
+    title: "ZETA (Zona E-Procurement Tender Akses)",
     description:
-      "Dashboard web untuk memvisualisasikan hasil prediksi penjualan, dilengkapi grafik interaktif dan filter data periode.",
-    image: "/projects/sales-prediction.png",
-    tech: ["Next.js", "Tailwind CSS", "Chart.js"],
-    demoUrl: "https://example.com/demo-sales-prediction",
-    githubUrl: "https://github.com/muhammadvicky/sales-prediction-system",
+      "ZETA merupakan sebuah Mobile Apps yang dimana kita bisa melakukan lelang melelang barang atau jasa sampai dengan melakukan pembayaran, saya dan tim membuat ZETA untuk tugas akhir matakuliah pemrograman mobile ",
+    image: "/projects/zeta.jpg",
+    tech: ["TypeScript", "Tailwind CSS",],
+    githubUrl: "https://github.com/vickasaaa/mobile_e-tender",
   },
   {
     id: 3,
-    title: "UI Kit Design - Fintech App",
+    title: "Visualearn",
     description:
-      "Rancangan UI Kit lengkap untuk aplikasi fintech, mencakup design system, komponen, dan panduan penggunaan warna & tipografi.",
-    image: "/projects/fintech-ui.png",
-    tech: ["Figma", "Design System", "UI Kit"],
-    demoUrl: "https://www.figma.com/design/8W3aEKs2tIMDktYXj6koTI/Gemastik_UI_UX?node-id=187-1170&t=oNbuMPqhwmTvbnY1-0https://www.figma.com/design/8W3aEKs2tIMDktYXj6koTI/Gemastik_UI_UX?node-id=0-1&m=dev&t=oNbuMPqhwmTvbnY1-1",
+      "Visualearn adalah aplikasi berbasis mobile yang bisa melakukan text to speech untuk membantu mahasiswa tuli untuk melakukan pembelajaran, saya dan tim merancang desain ini untuk mengikuti lomba UI/UX di GEMASTIK 2026",
+    image: "/projects/Gemastik.jpg",
+    tech: ["Figma"],
+    demoUrl: "https://www.figma.com/proto/8W3aEKs2tIMDktYXj6koTI/Gemastik_UI_UX?node-id=181-2&p=f&t=mC5iXUQaETvTvDJM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=156%3A2",
     githubUrl: null,
   },
 ];
@@ -117,7 +114,7 @@ export const educationTimeline = [
     place: "Universitas Buana Perjuangan Karawang",
     period: "2024 — Sekarang",
     description:
-      "Fokus pada Pengembangan Perangkat Lunak & Interaksi Manusia-Komputer. IPK 3.7/4.00.",
+      "Fokus pada Pengembangan Perangkat Lunak & Desain Grafis.",
   },
 ];
 
@@ -125,39 +122,31 @@ export const experienceTimeline = [
   {
     id: "exp-1",
     type: "experience",
-    title: "UI/UX Design Intern",
-    place: "PT Digital Kreatif Indonesia",
-    period: "Jun 2024 — Sep 2024",
+    title: "Web Developer",
+    place: "SMAN 3 CIKAMPEK",
+    period: "Jun 2023 — Sep 2023",
     description:
-      "Merancang wireframe dan prototype untuk aplikasi mobile banking, serta melakukan usability testing bersama 20+ pengguna.",
+      "Membuat Blog daftar guru dan staff SMAN 3 CIKAMPEK diperuntukan untuk masa mpls agar siswa dapet mengenal seluruh guru dan staff ",
   },
   {
     id: "exp-2",
     type: "experience",
     title: "Staff Divisi Desain & Multimedia",
-    place: "Himpunan Mahasiswa Teknik Informatika",
-    period: "2023 — 2024",
+    place: "UKM Mahasiswa Melawan Narkotika (MALAKA)",
+    period: "2024 — 2025",
     description:
-      "Bertanggung jawab atas kebutuhan desain visual untuk publikasi acara dan media sosial organisasi.",
+      "Bertanggung jawab atas kebutuhan desain visual untuk publikasi acara dan edukasi untuk masyarakat.",
   },
-  {
-    id: "exp-3",
-    type: "experience",
-    title: "Front-End Developer (Freelance)",
-    place: "Proyek Independen",
-    period: "2023 — Sekarang",
-    description:
-      "Mengerjakan beberapa proyek website untuk UMKM dan startup lokal menggunakan Next.js dan Tailwind CSS.",
-  },
+
 ];
 
 export const certificatesData = [
   {
     id: "cert-1",
-    title: "Google UI/UX Design Professional Certificate",
-    issuer: "Google (Coursera)",
-    year: "2024",
-    image: "/certificates/google-uiux.png",
+    title: "SQL",
+    issuer: "TESTDOME",
+    year: "2025",
+    image: "/certificates/SQL.jpg",
   },
   {
     id: "cert-2",

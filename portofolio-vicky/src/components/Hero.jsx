@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, MessageCircle } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { profile } from "@/data/portfolioData";
 
 const fadeUp = {
@@ -23,13 +23,18 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-white px-6 pt-32 pb-20"
+      className="relative flex min-h-screen items-center overflow-hidden px-6 pt-32 pb-20"
+      style={{
+        backgroundImage: "url('/bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
     >
-      {/* Subtle background accent */}
-      <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-blue-50 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-50/60 blur-3xl" />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/65 z-0" />
 
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[auto_1fr]">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[auto_1fr]">
         {/* Profile Photo */}
         <motion.div
           variants={fadeUp}
@@ -38,12 +43,12 @@ export default function Hero() {
           custom={0}
           className="flex justify-center md:justify-start"
         >
-          <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-xl shadow-slate-200 ring-1 ring-slate-200 sm:h-48 sm:w-48">
+          <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full border-4 border-white/30 shadow-2xl shadow-indigo-900/60 ring-2 ring-indigo-400/30 sm:h-48 sm:w-48">
             <Image
               src={profile.photo}
               alt={`Foto profil ${profile.name}`}
               fill
-              sizes="192px"
+              sizes="190px"
               className="object-cover"
               priority
             />
@@ -52,22 +57,13 @@ export default function Hero() {
 
         {/* Text Content */}
         <div className="text-center md:text-left">
-          <motion.span
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-600"
-          >
-            {profile.status}
-          </motion.span>
 
           <motion.h1
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={2}
-            className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl"
+            className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
             {profile.headline}
           </motion.h1>
@@ -77,7 +73,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={3}
-            className="mx-auto mt-5 max-w-xl text-lg text-slate-600 md:mx-0"
+            className="mx-auto mt-5 max-w-xl text-lg text-slate-200 md:mx-0"
           >
             {profile.subHeadline}
           </motion.p>
@@ -92,7 +88,7 @@ export default function Hero() {
             <a
               href="#projects"
               onClick={scrollToProjects}
-              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-blue-700 hover:shadow-blue-300"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10 backdrop-blur-sm"
             >
               Lihat Proyek
               <ArrowRight size={16} />
@@ -101,20 +97,10 @@ export default function Hero() {
             <a
               href={profile.cv}
               download
-              className="inline-flex items-center gap-2 rounded-full border-2 border-blue-600 px-6 py-3 text-sm font-semibold text-blue-600 transition-colors hover:bg-blue-50"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10 backdrop-blur-sm"
             >
               <Download size={16} />
               Unduh CV
-            </a>
-
-            <a
-              href={profile.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
-            >
-              <MessageCircle size={16} />
-              Hubungi saya
             </a>
           </motion.div>
         </div>

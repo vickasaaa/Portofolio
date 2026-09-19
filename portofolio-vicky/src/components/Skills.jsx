@@ -36,7 +36,7 @@ function SkillBadge({ skill }) {
     >
       <span className="flex h-6 w-6 shrink-0 items-center justify-center">
         <img
-          src={`https://cdn.simpleicons.org/${skill.icon}/${skill.color.replace("#", "")}`}
+          src={skill.localIcon || `https://cdn.simpleicons.org/${skill.icon}/${skill.color.replace("#", "")}`}
           alt={`${skill.name} logo`}
           className="h-5 w-5 object-contain transition-transform duration-200 group-hover:scale-110"
           loading="lazy"

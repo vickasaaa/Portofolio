@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, Figma } from "lucide-react";
 import { projectsData } from "@/data/portfolioData";
 
 const fadeUp = {
@@ -80,6 +80,18 @@ export default function Projects() {
                     >
                       <Github size={16} />
                       Lihat di GitHub
+                    </a>
+                  )}
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Lihat desain ${project.title} di Figma`}
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                    >
+                      <Figma size={16} />
+                      Lihat di Figma
                     </a>
                   )}
                 </div>

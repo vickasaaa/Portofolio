@@ -41,7 +41,7 @@ export default function About() {
             className="rounded-3xl border border-slate-200 bg-slate-50 p-8 md:col-span-4 md:row-span-2"
           >
             <h3 className="mb-4 text-2xl font-bold text-slate-900">
-              Desain yang Berbicara, Kode yang Bekerja
+              Design That Speaks, Code That Works
             </h3>
             <p className="text-base leading-relaxed text-slate-600">
               {aboutMe.intro}

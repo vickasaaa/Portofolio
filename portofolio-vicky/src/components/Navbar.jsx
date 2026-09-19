@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navLinks, profile } from "@/data/portfolioData";
 
 export default function Navbar() {
@@ -23,10 +23,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4">
+    <header className="absolute top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4">
       <nav
-        className={`w-full max-w-6xl rounded-2xl border border-slate-200/70 bg-white/80 backdrop-blur-md transition-shadow duration-300 ${scrolled ? "shadow-md shadow-slate-200/60" : ""
-          }`}
+        className={`w-full max-w-6xl rounded-2xl transition-all duration-300 ${
+          scrolled
+            ? "border border-white/10 bg-black/40 backdrop-blur-md shadow-lg shadow-black/20"
+            : "border border-transparent bg-transparent"
+        }`}
       >
         <div className="flex items-center justify-between px-5 py-3">
           {/* Logo */}
@@ -36,9 +39,9 @@ export default function Navbar() {
               e.preventDefault();
               handleLinkClick("#home");
             }}
-            className="text-lg font-bold tracking-tight text-slate-900"
+            className="text-lg font-bold tracking-tight text-white"
           >
-            <span className="text-blue-600">Portofolio</span>
+            <span className="text-white">Portofolio</span>
           </a>
 
           {/* Desktop Menu */}
@@ -51,7 +54,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleLinkClick(link.href);
                   }}
-                  className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
+                  className="text-sm font-medium text-white/70 transition-colors hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -59,20 +62,11 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* CTA Desktop */}
-          <a
-            href={profile.cv}
-            download
-            className="hidden items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 md:inline-flex"
-          >
-            <Download size={16} />
-            Unduh CV
-          </a>
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-slate-900 md:hidden"
+            className="text-white md:hidden"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,7 +75,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="border-t border-slate-200 px-5 pb-5 pt-3 md:hidden">
+          <div className="border-t border-white/10 px-5 pb-5 pt-3 md:hidden">
             <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -91,21 +85,13 @@ export default function Navbar() {
                       e.preventDefault();
                       handleLinkClick(link.href);
                     }}
-                    className="block text-sm font-medium text-slate-600 hover:text-blue-600"
+                    className="block text-sm font-medium text-white/70 hover:text-white"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-            <a
-              href={profile.cv}
-              download
-              className="mt-4 flex items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
-            >
-              <Download size={16} />
-              Unduh CV
-            </a>
           </div>
         )}
       </nav>
