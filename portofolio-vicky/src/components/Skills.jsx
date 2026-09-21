@@ -32,7 +32,7 @@ function SkillBadge({ skill }) {
     <motion.div
       variants={badgeFade}
       whileHover={{ scale: 1.06, y: -2 }}
-      className="group flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-2.5 shadow-sm transition-all duration-200 hover:border-slate-300 hover:shadow-md cursor-default"
+      className="group flex items-center gap-2.5 rounded-2xl border border-white/10 bg-slate-800/60 backdrop-blur-md px-4 py-2.5 shadow-md transition-all duration-200 hover:border-blue-400/50 hover:bg-slate-800 hover:shadow-lg hover:shadow-blue-500/10 cursor-default"
     >
       <span className="flex h-6 w-6 shrink-0 items-center justify-center">
         <img
@@ -43,7 +43,7 @@ function SkillBadge({ skill }) {
         />
       </span>
 
-      <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors duration-200">
+      <span className="text-sm font-medium text-slate-200 transition-colors duration-200 group-hover:text-white">
         {skill.name}
       </span>
     </motion.div>
@@ -52,8 +52,11 @@ function SkillBadge({ skill }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-slate-50 px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="skills" className="relative bg-[#0A0D14] px-6 py-24 overflow-hidden">
+      {/* Background glow accent */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -61,10 +64,10 @@ export default function Skills() {
           variants={fadeUp}
           className="mb-14 text-center"
         >
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-400">
             Skills
           </p>
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             Kemampuan &amp; Keahlian
           </h2>
         </motion.div>
@@ -80,16 +83,16 @@ export default function Skills() {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
                 transition={{ delay: idx * 0.15 }}
-                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm shadow-slate-100 transition-shadow hover:shadow-md"
+                className="rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 shadow-xl shadow-black/40 transition-all duration-300 hover:border-blue-500/30"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
                   <Icon size={22} />
                 </div>
 
-                <h3 className="mb-2 text-xl font-bold text-slate-900">
+                <h3 className="mb-2 text-xl font-bold text-white">
                   {card.title}
                 </h3>
-                <p className="mb-6 text-sm leading-relaxed text-slate-600">
+                <p className="mb-6 text-sm leading-relaxed text-slate-300">
                   {card.description}
                 </p>
 
@@ -98,7 +101,7 @@ export default function Skills() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
-                  className="flex flex-wrap gap-2"
+                  className="flex flex-wrap gap-2.5"
                 >
                   {card.skills.map((skill) => (
                     <SkillBadge key={skill.name} skill={skill} />
@@ -112,4 +115,3 @@ export default function Skills() {
     </section>
   );
 }
-

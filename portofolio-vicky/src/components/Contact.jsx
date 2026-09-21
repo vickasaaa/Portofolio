@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Linkedin, Github, Instagram, MessageCircle } from "lucide-react";
 import { profile, socialLinks } from "@/data/portfolioData";
 
-
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -19,8 +18,11 @@ const iconMap = {
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-slate-50 px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="contact" className="relative bg-[#0A0D14] px-6 py-24 overflow-hidden">
+      {/* Background glow accent */}
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -28,13 +30,13 @@ export default function Contact() {
           variants={fadeUp}
           className="mb-14 text-center"
         >
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-400">
             Contact
           </p>
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             Mari Berdiskusi
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-slate-600">
+          <p className="mx-auto mt-3 max-w-xl text-slate-300">
             Punya proyek atau ingin sekadar berdiskusi soal desain dan
             teknologi? Silakan hubungi saya melalui dibawah ini.
           </p>
@@ -47,37 +49,37 @@ export default function Contact() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeUp}
-            className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-8 w-full max-w-md"
+            className="flex flex-col justify-between rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-8 w-full max-w-md shadow-2xl shadow-black/40 transition-all duration-300 hover:border-blue-500/30"
           >
             <div>
-              <h3 className="mb-4 text-lg font-bold text-slate-900">
+              <h3 className="mb-6 text-lg font-bold text-white">
                 Informasi Kontak
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                <div className="flex items-center gap-3.5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 shrink-0">
                     <Mail size={18} />
                   </span>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="text-sm text-slate-600 hover:text-blue-600"
+                    className="text-sm font-medium text-slate-300 transition-colors hover:text-blue-400"
                   >
                     {profile.email}
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                <div className="flex items-center gap-3.5">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 shrink-0">
                     <MapPin size={18} />
                   </span>
-                  <span className="text-sm text-slate-600">
+                  <span className="text-sm font-medium text-slate-300">
                     {profile.location}
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8">
-              <p className="mb-3 text-sm font-semibold text-slate-900">
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="mb-4 text-sm font-semibold text-slate-200">
                 Temukan saya di
               </p>
               <div className="flex gap-3">
@@ -90,7 +92,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition-colors hover:border-blue-600 hover:text-blue-600"
+                      className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-slate-800/60 text-slate-300 transition-all duration-200 hover:border-blue-400 hover:bg-blue-500/10 hover:text-blue-400 hover:scale-110"
                     >
                       <Icon size={18} />
                     </a>
