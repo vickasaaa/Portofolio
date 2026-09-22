@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { profile } from "@/data/portfolioData";
 
 const fadeUp = {
@@ -93,14 +93,7 @@ export default function Hero() {
               <ArrowRight size={16} />
             </a>
 
-            <a
-              href={profile.cv}
-              download
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/80 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-zinc-800 hover:border-zinc-500"
-            >
-              <Download size={16} />
-              Unduh CV
-            </a>
+
           </motion.div>
         </div>
       </div>

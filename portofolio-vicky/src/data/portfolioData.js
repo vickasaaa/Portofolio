@@ -193,7 +193,7 @@ export const achievementsData = [
 ];
 
 export const socialLinks = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/muhammadvicky", icon: "linkedin" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/muhammad-vicky-4160a4349?utm_source=share_via&utm_content=profile&utm_medium=member_android", icon: "linkedin" },
   { label: "GitHub", href: "https://github.com/vickasaaa", icon: "github" },
   { label: "Instagram", href: "https://instagram.com/vickasaaa", icon: "instagram" },
   { label: "WhatsApp", href: "https://wa.me/6285813288426", icon: "whatsapp" },
