@@ -4,15 +4,17 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #000000;
 }
 
 body {
-  background-color: #0A0D14;
-  color: #f8fafc;
+  background-color: #000000;
+  color: #f4f4f5;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 ::selection {
-  background-color: #3b82f6;
+  background-color: #3f3f46;
   color: #ffffff;
 }
 
@@ -21,14 +23,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0D14;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #1e293b;
+  background-color: #27272a;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #334155;
+  background-color: #3f3f46;
 }
 
 /* Respect reduced motion preference */
@@ -43,72 +45,11 @@ body {
   }
 }
 
-/* ── Animated Hero Background ── */
-.hero-animated-bg {
-  background: linear-gradient(-45deg, #0d1117, #0f1f3d, #1a1040, #0a192f);
-  background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
+/* Deep Space Subtle Starfield background pattern */
+.space-stars-bg {
+  background-color: #000000;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px, 120px 120px;
+  background-position: 0 0, 30px 30px;
 }
-
-@keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Floating orbs */
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.35;
-  pointer-events: none;
-  animation: orbFloat 7s ease-in-out infinite;
-}
-
-.hero-orb-1 {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle at center, #6366f1, #4f46e5);
-  top: -15%;
-  left: -10%;
-  animation-delay: 0s;
-  animation-duration: 8s;
-}
-
-.hero-orb-2 {
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle at center, #0ea5e9, #2563eb);
-  top: 40%;
-  right: -8%;
-  animation-delay: 2.5s;
-  animation-duration: 9s;
-}
-
-.hero-orb-3 {
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle at center, #8b5cf6, #a855f7);
-  bottom: -10%;
-  left: 35%;
-  animation-delay: 5s;
-  animation-duration: 7s;
-}
-
-.hero-orb-4 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle at center, #06b6d4, #0891b2);
-  top: 20%;
-  left: 55%;
-  animation-delay: 1s;
-  animation-duration: 11s;
-}
-
-@keyframes orbFloat {
-  0%,  100% { transform: translateY(0px)   scale(1);    }
-  33%        { transform: translateY(-28px) scale(1.04); }
-  66%        { transform: translateY(14px)  scale(0.97); }
-}
-

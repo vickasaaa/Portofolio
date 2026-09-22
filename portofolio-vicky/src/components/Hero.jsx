@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden px-6 pt-32 pb-20"
+      className="relative flex min-h-screen items-center overflow-hidden px-6 pt-32 pb-20 bg-black"
       style={{
         backgroundImage: "url('/bg.jpg')",
         backgroundSize: "cover",
@@ -31,8 +31,8 @@ export default function Hero() {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/65 z-0" />
+      {/* Dark gradient overlay blending space into pure black */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black z-0 pointer-events-none" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[auto_1fr]">
         {/* Profile Photo */}
@@ -43,7 +43,7 @@ export default function Hero() {
           custom={0}
           className="flex justify-center md:justify-start"
         >
-          <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full border-4 border-white/30 shadow-2xl shadow-indigo-900/60 ring-2 ring-indigo-400/30 sm:h-48 sm:w-48">
+          <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full border-4 border-white/20 shadow-2xl ring-2 ring-zinc-700 sm:h-48 sm:w-48">
             <Image
               src={profile.photo}
               alt={`Foto profil ${profile.name}`}
@@ -57,7 +57,6 @@ export default function Hero() {
 
         {/* Text Content */}
         <div className="text-center md:text-left">
-
           <motion.h1
             variants={fadeUp}
             initial="hidden"
@@ -73,7 +72,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={3}
-            className="mx-auto mt-5 max-w-xl text-lg text-slate-200 md:mx-0"
+            className="mx-auto mt-5 max-w-xl text-lg text-zinc-300 md:mx-0 font-normal"
           >
             {profile.subHeadline}
           </motion.p>
@@ -88,7 +87,7 @@ export default function Hero() {
             <a
               href="#projects"
               onClick={scrollToProjects}
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-zinc-200 border border-white shadow-lg"
             >
               Lihat Proyek
               <ArrowRight size={16} />
@@ -97,7 +96,7 @@ export default function Hero() {
             <a
               href={profile.cv}
               download
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white/10 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-950/80 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-zinc-800 hover:border-zinc-500"
             >
               <Download size={16} />
               Unduh CV
