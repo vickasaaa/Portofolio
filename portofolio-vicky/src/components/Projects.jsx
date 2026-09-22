@@ -12,10 +12,7 @@ const fadeUp = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative bg-[#0A0D14] px-6 py-24 overflow-hidden">
-      {/* Background glow accent */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
-
+    <section id="projects" className="relative bg-black px-6 py-24">
       <div className="relative z-10 mx-auto max-w-6xl">
         <motion.div
           initial="hidden"
@@ -24,9 +21,9 @@ export default function Projects() {
           variants={fadeUp}
           className="mb-14 text-center"
         >
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-400">
+          <span className="inline-block mb-3 text-xs font-mono font-medium uppercase tracking-widest text-zinc-400 bg-zinc-900/80 border border-zinc-800 px-3.5 py-1.5 rounded-full">
             Projects
-          </p>
+          </span>
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             Proyek Terbaru
           </h2>
@@ -41,9 +38,9 @@ export default function Projects() {
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUp}
               transition={{ delay: idx * 0.12 }}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl shadow-xl shadow-black/40 transition-all duration-300 hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/10"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-zinc-800/90 bg-zinc-950/80 backdrop-blur-md shadow-xl transition-all duration-300 hover:border-zinc-700"
             >
-              <div className="relative aspect-video w-full overflow-hidden bg-slate-950 border-b border-white/10">
+              <div className="relative aspect-video w-full overflow-hidden bg-zinc-900 border-b border-zinc-800">
                 <Image
                   src={project.image}
                   alt={`Thumbnail proyek ${project.title}`}
@@ -54,10 +51,10 @@ export default function Projects() {
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="mb-2 text-lg font-bold text-white transition-colors duration-200 group-hover:text-blue-400">
+                <h3 className="mb-2 text-lg font-bold text-white transition-colors duration-200 group-hover:text-zinc-200">
                   {project.title}
                 </h3>
-                <p className="mb-4 flex-1 text-sm leading-relaxed text-slate-300">
+                <p className="mb-4 flex-1 text-sm leading-relaxed text-zinc-400">
                   {project.description}
                 </p>
 
@@ -65,7 +62,7 @@ export default function Projects() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full bg-blue-500/10 border border-blue-500/20 px-3 py-1 text-xs font-semibold text-blue-300"
+                      className="rounded-full bg-zinc-900 border border-zinc-800 px-3 py-1 text-xs font-medium text-zinc-300"
                     >
                       {tech}
                     </span>
@@ -79,7 +76,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Lihat kode ${project.title} di GitHub`}
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/20 transition-all duration-200 hover:from-blue-500 hover:to-indigo-500"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-zinc-200 border border-white"
                     >
                       <Github size={16} />
                       Lihat di GitHub
@@ -91,7 +88,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Lihat desain ${project.title} di Figma`}
-                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-blue-600/20 transition-all duration-200 hover:from-blue-500 hover:to-indigo-500"
+                      className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-zinc-200 border border-white"
                     >
                       <Figma size={16} />
                       Lihat di Figma
